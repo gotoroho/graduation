@@ -2,16 +2,19 @@ $(document).ready(function(){
   var mySwiper = new Swiper ('.swiper-container', {
     direction: 'horizontal',
     loop: true,
-    initialSlide: 1,
-    slidesPerView: 1,
     spaceBetween: 25,
     breakpoints: {
+    	0: {
+    		initialSlide: 1,
+    		slidesPerView: 1,
+    	},
 		  600: {
 		    slidesPerView: 2,
     		initialSlide: 0,
 		  },
 		  1100: {
 		    slidesPerView: 3,
+    		initialSlide: 0,
 		  }
 		},
 
@@ -21,27 +24,20 @@ $(document).ready(function(){
     },
 
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.arrow_right',
+      prevEl: '.arrow_left',
     },
   });
 
   var scroll = new SmoothScroll('a[href*="#"]');
 
   $('.burger').on('click', function() {
-  	$(this).css('transform', 'translateY(-100%');
-  	$('.burger-close').css('transform', 'translateY(-100%');
   	$('.header__left').addClass('show');
   });
 
-  function closeMenu() {
-  	$('.burger').css('transform', 'translateY(0)');
-  	$('.burger-close').css('transform', 'translateY(0)');
+  $('.burger-close, .header__left a').on('click', function() {
   	$('.header__left').removeClass('show');
-  };
-
-  $('.burger-close').on('click', closeMenu);
-  $('.header__left a').on('click', closeMenu);
+  });
 
   $('.null-transform.flying').removeClass('null-transform');
   $(document).on('scroll', function() {
@@ -53,29 +49,30 @@ $(document).ready(function(){
 		}			
 	});
 
-  function openForm() {
+  $('.header__call, .footer__call').on('click', function() {
 	  if (!$('.get').hasClass('show')) {
-	  	$('.get__email').hide();
+	  	$('.get__spec').hide();
 	  	$('.get').addClass('show');
 	  	$('.overlay').addClass('show');
 	  	$('.get__submit').text('Заказать звонок');
+	  	$('.get__header h2').text('Оставьте свои данные и я перезвоню!');
+	  	$('body, html').addClass('stop-scrolling');
 	  }
-	};
-
-  $('.header__call').on('click', openForm);
-
-  $('.footer__call').on('click', openForm);
+	});
 
   $('.examples__order').on('click', function() {
-  	$('.get__email').show();
+  	$('.get__spec').show();
   	$('.get').addClass('show');
   	$('.overlay').addClass('show');
   	$('.get__submit').text('Заказать проект');
+  	$('.get__header h2').text('Расскажите о проекте и я свяжусь с вами!');
+  	$('body, html').addClass('stop-scrolling');
   })
 
-  $('.overlay').on('click', function closeOverlay() {
+  $('.overlay, .get__header span').on('click', function() {
   	$('.get').removeClass('show');
   	$('.overlay').removeClass('show');
+  	$('body, html').removeClass('stop-scrolling');
   });
 
   function validateEmail(email)	{
