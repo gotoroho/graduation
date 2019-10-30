@@ -866,18 +866,6 @@
 	background-size: cover;
 }
 
-.swiper__img_1 {
-	background-image: url(../img/desktop/ex_1.jpg);
-}
-
-.swiper__img_2 {
-	background-image: url(../img/desktop/ex_2.jpg);
-}
-
-.swiper__img_3 {
-	background-image: url(../img/desktop/ex_3.jpg);
-}
-
 .swiper__span {
 	display: block;
 	text-align: center;
@@ -921,14 +909,6 @@
 
 	.swiper__img {
 		height: 34.5vw;
-	}
-
-	.swiper__img_1 {
-		background-image: url(../img/tablet/ex_1.jpg);
-	}
-
-	.swiper__img_2 {
-		background-image: url(../img/tablet/ex_2.jpg);
 	}
 
 	.swiper__span {
