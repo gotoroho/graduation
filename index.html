@@ -7,10 +7,11 @@
 
 	<title>Дипломный проект</title>
 
+	<link rel="shortcut icon" href="img/favicon.png" type="image/png">
 	<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="js/node_modules/swiper/css/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="css/base.css">
 	<link rel="stylesheet" type="text/css" href="css/flying.css">
-	<link rel="stylesheet" type="text/css" href="js/node_modules/swiper/css/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<!-- <link rel="stylesheet" type="text/css" href="css/prefixed_style.css"> -->
 
@@ -21,6 +22,11 @@
 	<script src="js/main.js" defer></script>
 </head>
 <body>
+	<div class="we-will-call-back">
+		<span>Ждите звонок...</span>
+		<img src="img/event-halloween.png">
+	</div>
+
 	<form class="get">
 		<div class="get__main">
 			<div class="get__header">
@@ -37,13 +43,13 @@
 				<input required type="text" name="tel" class="get__tel-input" placeholder="+7 (499) 995-55-77">
 			</label>
 			<label class="get__spec get__spec_email">Адрес почты:
-				<input required type="text" name="email" class="get__email-input" placeholder="dmitry@alekseev.com">
+				<input type="text" name="email" class="get__email-input" placeholder="dmitry@alekseev.com">
 			</label>
 			<label class="get__spec get__spec_type">Тип проекта:
-				<input required type="text" name="type" class="get__type-input">
+				<input type="text" name="type" class="get__type-input">
 			</label>
 			<label class="get__spec get__spec_time">Сроки:
-				<input required type="text" name="time" class="get__time-input">
+				<input type="text" name="time" class="get__time-input">
 			</label>
 			<label class="get__spec get__spec_smth">Дополнительно:
 				<input type="text" name="smth" class="get__smth-input">
@@ -177,8 +183,8 @@
 					</ul>
 				</nav>
 				<div class="footer__center">
-					<a href="tel:+74999957755" class="footer__tel"><span class="fa fa-phone"></span>+7 (499) 995-77-55</a>
-					<a href="mailto:dmitry@alekseev.com" class="footer__envelope"><span class="fa fa-envelope"></span>dmitry@alekseev.com</a>
+					<a href="tel:+74999957755" class="footer__item footer__item_tel"><span class="fa fa-phone"></span>+7 (499) 995-77-55</a>
+					<a href="mailto:dmitry@alekseev.com" class="footer__item footer__item_envelope"><span class="fa fa-envelope"></span>dmitry@alekseev.com</a>
 				</div>
 				<div class="footer__right">
 					<button class="btn btn_pink footer__call">Заказать звонок</button>

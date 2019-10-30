@@ -480,6 +480,7 @@ html, body {
   background-color: #00000088;
   z-index: -50;
   opacity: 0;
+  cursor: pointer;
   transition: all .4s;
 }
 

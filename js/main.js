@@ -49,6 +49,8 @@ $(document).ready(function(){
 		}			
 	});
 
+  var clientScroll;
+
   $('.header__call, .footer__call').on('click', function() {
 	  if (!$('.get').hasClass('show')) {
 	  	$('.get__spec').hide();
@@ -56,7 +58,8 @@ $(document).ready(function(){
 	  	$('.overlay').addClass('show');
 	  	$('.get__submit').text('Заказать звонок');
 	  	$('.get__header h2').text('Оставьте свои данные и я перезвоню!');
-	  	$('body, html').addClass('stop-scrolling');
+      clientScroll = $(window).scrollTop();
+	  	$('body, html').addClass('stop-scrolling').css('top' , -clientScroll);
 	  }
 	});
 
@@ -66,13 +69,14 @@ $(document).ready(function(){
   	$('.overlay').addClass('show');
   	$('.get__submit').text('Заказать проект');
   	$('.get__header h2').text('Расскажите о проекте и я свяжусь с вами!');
-  	$('body, html').addClass('stop-scrolling');
+    clientScroll = $(window).scrollTop();
+  	$('body, html').addClass('stop-scrolling').css('top' , -clientScroll);
   })
 
   $('.overlay, .get__header span').on('click', function() {
   	$('.get').removeClass('show');
   	$('.overlay').removeClass('show');
-  	$('body, html').removeClass('stop-scrolling');
+  	$('body, html').removeClass('stop-scrolling').css('top', 'unset').scrollTop(clientScroll);
   });
 
   function validateEmail(email)	{
@@ -89,5 +93,15 @@ $(document).ready(function(){
   	$('.get').removeClass('show');
   	$('.overlay').removeClass('show');
   	$('.get input').val('');
+    $('body, html').removeClass('stop-scrolling').css('top', 'unset').scrollTop(clientScroll);
+
+    $('.we-will-call-back').css('transform', 'translateX(0)');
+    setTimeout(function() {
+      $('.we-will-call-back').css('transform', 'translateX(100vw)');
+    }, 6666);
   });
+
+  $('.we-will-call-back').on('click', function() {
+    $('.we-will-call-back').css('transform', 'translateX(100vw)');
+  })
 });

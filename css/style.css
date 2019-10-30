@@ -80,6 +80,33 @@
 	transition: all .4s;
 }
 
+/* Event */
+.we-will-call-back {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: 1000000000;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	transform: translateX(100vw);
+	transition: transform .4s;
+}
+
+.we-will-call-back span {
+	display: block;
+	font-size: 20px;
+	color: #000;
+	text-shadow: -1px -1px 2px #b60606, 1px 1px 2px #0606b6;
+	animation: spooky .6s ease-in-out .6s infinite alternate;
+}
+
+@keyframes spooky {
+	from {text-shadow: -1px -1px 2px #b60606, 1px 1px 2px #0606b6;}
+	to {text-shadow: -1px -1px 2px #0606b6, 1px 1px 2px #b60606;}
+}
+
+/* Get form */
 .get {
 	position: fixed;
 	background-color: #fff;
@@ -187,17 +214,6 @@
 	transform: translate(-50%, -50%);
 }
 
-.btn,
-.burger {
-	transform: none;
-	transition: transform .4s;
-}
-
-.btn:hover,
-.burger:hover {
-	transform: scaleX(1.1);
-}
-
 @media(max-width: 1023px) {
 	.get {
 		width: 80vw;
@@ -226,6 +242,83 @@
 	.get h2 {
 		font-size: 1.2rem;
 	}
+}
+
+/* Hovers */
+.btn, .header__call-span {
+	transition: background-color .4s, color .4s;
+}
+
+.btn:hover {
+	background-color: #f82370;
+}
+
+.btn_pink:hover,
+.btn_pink:hover .header__call-span {
+	color: #fff;
+}
+
+@media(max-width: 768px) {
+	.header__call {
+		transition: transform .4s, border-color .4s;
+	}
+
+	.header__call:hover {
+		transform: scale(1.2);
+		background-color: unset;
+		border-color: #fff;
+	}
+}
+
+.footer__left a, .footer__item, .header__tel {
+	transition: color .4s;
+}
+
+.footer__left a:hover, .footer__item:hover, .header__tel:hover {
+	color: #f82370;
+}
+
+.footer__social {
+	user-select: none;
+}
+
+.footer__social a {
+	filter: none;
+	transition: filter .4s;
+	user-select: none;
+}
+
+.footer__social a:hover {
+	filter: hue-rotate(140deg) contrast(300%);
+}
+
+.burger, .burger-close {
+	transition: transform .4s;
+}
+
+.burger:hover, .burger-close:hover {
+	transform: scale(0.9);
+}
+
+.header__left a {
+	position: relative;
+}
+
+.header__left a::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: -10px;
+	transform: translateX(-50%) scale(0);
+	width: 100%;
+	height: 2px;
+	background-image: linear-gradient(13deg, #ff8f5a 0%, #ff2f96 99%, #ff2f96 100%);
+	cursor: auto;
+	transition: transform .4s;
+}
+
+.header__left li:hover a::after {
+	transform: translateX(-50%) scale(1);
 }
 
 /* Background */
@@ -449,45 +542,10 @@
 	}
 
 	.header__left li {
-		padding: 0 20px;
+		padding: 10px;
 		margin: 0;
 		position: relative;
 	}	
-
-	.header__left a::before,
-	.header__left a::after {
-		content: '';
-		position: absolute;
-		width: 2px;
-		height: 100%;
-		background-image: linear-gradient(13deg, #ff8f5a 0%, #ff2f96 99%, #ff2f96 100%);
-		transition: all .4s;
-		cursor: auto;
-	}
-
-	.header__left a::before {
-		top: 50%;
-		left: 0;
-		transform: translateY(-50%);
-	}
-
-	.header__left a::after {
-		bottom: 50%;
-		right: 0;
-		transform: translateY(50%);
-	}
-
-	.header__left li:hover a::before {
-		left: 50%;
-		transform: translateY(5px) rotate(90deg) scale(1, 2);
-		transition: all .4s;
-	}
-
-	.header__left li:hover a::after {
-		right: 50%;
-		transform: translateY(-5px) rotate(90deg) scale(1, 2);
-		transition: all .4s;
-	}
 
 	.header__left.show {
 		transform: translateX(0);
@@ -541,6 +599,11 @@
 
 	.header__tel {
 		font-size: 18px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		margin-right: 0;
 	}
 
 	.header__call {
@@ -615,19 +678,8 @@
 		padding-left: 10px;
 	}
 
-	.header__left a::before,
 	.header__left a::after {
-		display: none;
-	}
-
-	.header__left li:hover {
-		text-shadow: 0 0 4px #ff2f96;
-		transition: text-shadow .4s;
-	}
-
-	.header__left li {
-		padding: 0;
-		transition: text-shadow .4s;
+		width: 80%;
 	}
 }
 
@@ -648,11 +700,6 @@
 	.background__svg {
     height: 400px;
     left: 63%
-	}
-
-	.header__right {
-    justify-content: space-between;
-    min-width: 220px;
 	}
 }
 
@@ -1083,14 +1130,13 @@
   padding-top: 4px;
 }
 
-.footer__tel,
-.footer__envelope {
+.footer__item {
 	color: #000000;
 	font-size: 25px;
 	font-weight: 400;
 }
 
-.footer__envelope {
+.footer__item_envelope {
 	margin-top: 30px;
 }
 
@@ -1207,12 +1253,11 @@
 		margin: 23px 0 0;
 	}
 
-	.footer__envelope {
+	.footer__item_envelope {
     margin-top: 23px;
 	}
 
-	.footer__tel,
-	.footer__envelope {
+	.footer__item {
 		color: #8993ad;
 		font-size: 20px;
 	}
