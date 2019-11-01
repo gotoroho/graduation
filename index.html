@@ -13,56 +13,8 @@
 	<link rel="stylesheet" type="text/css" href="css/base.css">
 	<link rel="stylesheet" type="text/css" href="css/flying.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<!-- <link rel="stylesheet" type="text/css" href="css/prefixed_style.css"> -->
-
-	<script src="js/jquery-3.4.1.min.js" defer></script>
-	<script src="js/smooth-scroll/dist/smooth-scroll.min.js" defer></script>
-	<script src="js/jQuery-Mask-Plugin-master/dist/jquery.mask.min.js" defer></script>
-	<script src="js/node_modules/swiper/js/swiper.min.js" defer></script>
-	<script src="js/main.js" defer></script>
 </head>
 <body>
-	<div class="we-will-call-back">
-		<span>Ждите звонок...</span>
-		<img src="img/event-halloween.png" alt="HALLOWEEN">
-	</div>
-
-	<form class="get">
-		<div class="get__main">
-			<div class="get__header">
-				<h2>Оставьте свои данные и я перезвоню!</h2>
-				<div class="span-container">
-					<span></span>
-					<span></span>
-				</div>
-			</div>
-			<label class="get__name">Ваше имя:
-				<input required="" type="text" name="name" class="get__name-input">
-			</label>	
-			<label class="get__tel">Номер телефона:
-				<input required type="text" name="tel" class="get__tel-input" placeholder="+7 (499) 995-55-77">
-			</label>
-			<label class="get__spec get__spec_email">Адрес почты:
-				<input type="text" name="email" class="get__email-input" placeholder="dmitry@alekseev.com">
-			</label>
-			<label class="get__spec get__spec_type">Тип проекта:
-				<input type="text" name="type" class="get__type-input">
-			</label>
-			<label class="get__spec get__spec_time">Сроки:
-				<input type="text" name="time" class="get__time-input">
-			</label>
-			<label class="get__spec get__spec_smth">Дополнительно:
-				<input type="text" name="smth" class="get__smth-input">
-			</label>
-		</div>
-		<button type="submit" name="submit" class="get__submit btn btn_orange">Заказать звонок</button>
-	</form>
-
-	<div class="overlay">
-		<span></span>
-		<span></span>
-	</div>
-
 	<header class="header fixed-container">
 		<div class="burger"></div>
 		<nav class="header__left">
@@ -77,8 +29,8 @@
 			</ul>
 		</nav>
 		<div class="header__right">
-			<a href="tel:+74999955577" class="header__tel">+7 (499) 995-55-77</a>
-			<button class="btn btn_pink header__call"><span class="fa fa-phone"></span><span class="header__call-span">Заказать звонок</span></button>
+			<a href="tel:+74999955577" class="header__tel" title="Позвонить">+7 (499) 995-55-77</a>
+			<button class="btn btn_pink header__call" title="Заказать звонок"><span class="fa fa-phone"></span><span class="header__call-span">Заказать звонок</span></button>
 		</div>
 	</header>
 
@@ -147,10 +99,43 @@
 		        </div>
 			    </div>
 			    <div class="swiper-pagination"></div>
-			    <div class="arrow arrow_left"></div>
-			    <div class="arrow arrow_right"></div>
+			    <div class="arrow arrow_left" title="Предыдущий слайд"></div>
+			    <div class="arrow arrow_right" title="Следующий слайд"></div>
 				</div>
 			</div>
+			<script src="js/node_modules/swiper/js/swiper.min.js"></script>
+			<script>
+				var mySwiper = new Swiper ('.swiper-container', {
+			    direction: 'horizontal',
+			    loop: true,
+			    spaceBetween: 25,
+			    breakpoints: {
+			    	0: {
+			    		initialSlide: 1,
+			    		slidesPerView: 1,
+			    	},
+					  600: {
+					    slidesPerView: 2,
+			    		initialSlide: 0,
+					  },
+					  1100: {
+					    slidesPerView: 3,
+			    		initialSlide: 0,
+					  }
+					},
+
+			    pagination: {
+			      el: '.swiper-pagination',
+			      clickable: true,
+			    },
+
+			    navigation: {
+			      nextEl: '.arrow_right',
+			      prevEl: '.arrow_left',
+			    },
+			  });
+			</script>
+
 			<button class="btn btn_orange examples__order">Заказать проект</button>
 		</div>
 	</section>
@@ -183,20 +168,70 @@
 					</ul>
 				</nav>
 				<div class="footer__center">
-					<a href="tel:+74999957755" class="footer__item footer__item_tel"><span class="fa fa-phone"></span>+7 (499) 995-77-55</a>
-					<a href="mailto:dmitry@alekseev.com" class="footer__item footer__item_envelope"><span class="fa fa-envelope"></span>dmitry@alekseev.com</a>
+					<a href="tel:+74999957755" class="footer__item footer__item_tel" title="Позвонить"><span class="fa fa-phone"></span>+7 (499) 995-77-55</a>
+					<a href="mailto:dmitry@alekseev.com" class="footer__item footer__item_envelope" title="Написать"><span class="fa fa-envelope"></span>dmitry@alekseev.com</a>
 				</div>
 				<div class="footer__right">
 					<button class="btn btn_pink footer__call">Заказать звонок</button>
 					<div class="footer__social">
-						<a target="_blank" href="http://vk.com"></a>
-						<a target="_blank" href="http://facebook.com"></a>
-						<a target="_blank" href="http://twitter.com"></a>
-						<a target="_blank" href="http://instagram.com"></a>
+						<a target="_blank" href="http://vk.com" title="Перейти на сайт"></a>
+						<a target="_blank" href="http://facebook.com" title="Перейти на сайт"></a>
+						<a target="_blank" href="http://twitter.com" title="Перейти на сайт"></a>
+						<a target="_blank" href="http://instagram.com" title="Перейти на сайт"></a>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="footer__bottom">© Дмитрий Алексеев, 2016 – 2018</div>
 	</footer>
+
+	<div class="we-will-call-back">
+		<span>Ждите звонок...</span>
+		<img src="img/event-halloween.png" alt="HALLOWEEN">
+	</div>
+
+	<form class="get">
+		<div class="get__main">
+			<div class="get__header">
+				<h2>Оставьте свои данные и я перезвоню!</h2>
+				<div class="span-container" title="Закрыть">
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+			<label class="get__name">Ваше имя:
+				<input type="text" name="name" class="get__name-input">
+				<div class="invalid invalid_name">Укажите имя!</div>				
+			</label>	
+			<label class="get__tel">Номер телефона:
+				<input type="text" name="tel" class="get__tel-input" placeholder="+7 (499) 995-55-77">
+				<div class="invalid invalid_tel">Неверно указан номер!</div>
+			</label>
+			<label class="get__spec get__spec_email">Адрес почты:
+				<input type="text" name="email" class="get__email-input" placeholder="dmitry@alekseev.com">
+				<div class="invalid invalid_email">Неверно указан адрес!</div>
+			</label>
+			<label class="get__spec get__spec_type">Тип проекта:
+				<input type="text" name="type" class="get__type-input" placeholder="Сайт под ключ">
+			</label>
+			<label class="get__spec get__spec_time">Сроки:
+				<input type="text" name="time" class="get__time-input" placeholder="ГОРИТ!!!">
+			</label>
+			<label class="get__spec get__spec_smth">Дополнительно:
+				<input type="text" name="smth" class="get__smth-input" placeholder="С поддержкой всех версий IE">
+			</label>
+		</div>
+		<button type="submit" name="submit" class="get__submit btn btn_orange" title="Заказать">Заказать звонок</button>
+	</form>
+
+	<div class="overlay" title="Закрыть">
+		<span></span>
+		<span></span>
+	</div>
+
+	<script src="js/smooth-scroll/dist/smooth-scroll.min.js"></script>
+	<script>var scroll = new SmoothScroll('a[href*="#"]');</script>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/jQuery-Mask-Plugin-master/dist/jquery.mask.min.js"></script>
+	<script src="js/main.js"></script>
 </body>
