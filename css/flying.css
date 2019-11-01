@@ -3,37 +3,69 @@
   font-weight: 700;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#f26522), color-stop(99%, #fa0891), to(#fa0891));
+  background-image: -o-linear-gradient(bottom, #f26522 0%, #fa0891 99%, #fa0891 100%);
   background-image: linear-gradient(to top, #f26522 0%, #fa0891 99%, #fa0891 100%);
 }
 
 .flying_div-1 {
   font-size: 29px;
-  transform: translate(41vw, 135px) rotate(-375deg);
+  -webkit-transform: translate(41vw, 135px) rotate(-375deg);
+      -ms-transform: translate(41vw, 135px) rotate(-375deg);
+          transform: translate(41vw, 135px) rotate(-375deg);
+  -webkit-transition: -webkit-transform 2s;
+  transition: -webkit-transform 2s;
+  -o-transition: transform 2s;
   transition: transform 2s;
+  transition: transform 2s, -webkit-transform 2s;
 }
 
 .flying_div-2 {
   font-size: 35px;
-  transform: translate(50vw, 510px) rotate(-340deg);
+  -webkit-transform: translate(50vw, 510px) rotate(-340deg);
+      -ms-transform: translate(50vw, 510px) rotate(-340deg);
+          transform: translate(50vw, 510px) rotate(-340deg);
+  -webkit-transition: -webkit-transform 2s;
+  transition: -webkit-transform 2s;
+  -o-transition: transform 2s;
   transition: transform 2s;
+  transition: transform 2s, -webkit-transform 2s;
 }
 
 .flying_hooks {
   font-size: 43px;
-  transform: translate(7vw, 105px) rotate(-330deg);
+  -webkit-transform: translate(7vw, 105px) rotate(-330deg);
+      -ms-transform: translate(7vw, 105px) rotate(-330deg);
+          transform: translate(7vw, 105px) rotate(-330deg);
+  -webkit-transition: -webkit-transform 2s;
+  transition: -webkit-transform 2s;
+  -o-transition: transform 2s;
   transition: transform 2s;
+  transition: transform 2s, -webkit-transform 2s;
 }
 
 .flying_sharp {
 	font-size: 55px;
-  transform: translate(13vw, 332px) rotate(-340deg);
+  -webkit-transform: translate(13vw, 332px) rotate(-340deg);
+      -ms-transform: translate(13vw, 332px) rotate(-340deg);
+          transform: translate(13vw, 332px) rotate(-340deg);
+  -webkit-transition: -webkit-transform 2s;
+  transition: -webkit-transform 2s;
+  -o-transition: transform 2s;
   transition: transform 2s;
+  transition: transform 2s, -webkit-transform 2s;
 }
 
 .flying_nothing {
 	font-size: 38px;
-  transform: translate(20vw, 638px) rotate(-384deg);
+  -webkit-transform: translate(20vw, 638px) rotate(-384deg);
+      -ms-transform: translate(20vw, 638px) rotate(-384deg);
+          transform: translate(20vw, 638px) rotate(-384deg);
+  -webkit-transition: -webkit-transform 2s;
+  transition: -webkit-transform 2s;
+  -o-transition: transform 2s;
   transition: transform 2s;
+  transition: transform 2s, -webkit-transform 2s;
 }
 
 .flying_nothing-2 {
@@ -42,11 +74,15 @@
 
 @media (max-width: 1850px) {
 	.flying_div-2 {
-	  transform: translate(30vw, 560px) rotate(-340deg);
+	  -webkit-transform: translate(30vw, 560px) rotate(-340deg);
+	      -ms-transform: translate(30vw, 560px) rotate(-340deg);
+	          transform: translate(30vw, 560px) rotate(-340deg);
 	}
 
 	.flying_sharp {
-	  transform: translate(5vw, 332px) rotate(-340deg);
+	  -webkit-transform: translate(5vw, 332px) rotate(-340deg);
+	      -ms-transform: translate(5vw, 332px) rotate(-340deg);
+	          transform: translate(5vw, 332px) rotate(-340deg);
 	}
 }
 
@@ -56,38 +92,56 @@
 	}
 
 	.flying_sharp {
-	  transform: translate(5vw, 482px) rotate(-340deg);
+	  -webkit-transform: translate(5vw, 482px) rotate(-340deg);
+	      -ms-transform: translate(5vw, 482px) rotate(-340deg);
+	          transform: translate(5vw, 482px) rotate(-340deg);
 	}
 }
 
 @media(max-width: 1100px) {
 	.flying_sharp {
-	  transform: translate(5vw, 542px) rotate(-340deg);
+	  -webkit-transform: translate(5vw, 542px) rotate(-340deg);
+	      -ms-transform: translate(5vw, 542px) rotate(-340deg);
+	          transform: translate(5vw, 542px) rotate(-340deg);
 	}
 }
 
 @media(max-width: 1024px) {
 	.flying_div-1 {
-    transform: translate(87vw, 120px) rotate(-375deg);
+    -webkit-transform: translate(87vw, 120px) rotate(-375deg);
+        -ms-transform: translate(87vw, 120px) rotate(-375deg);
+            transform: translate(87vw, 120px) rotate(-375deg);
 	}
 
 	.flying_hooks {
-    transform: translate(8vw, 125px) rotate(-330deg);
+    -webkit-transform: translate(8vw, 125px) rotate(-330deg);
+        -ms-transform: translate(8vw, 125px) rotate(-330deg);
+            transform: translate(8vw, 125px) rotate(-330deg);
   }
 
   .flying_sharp {
-    transform: translate(6vw, 597px) rotate(-340deg);
+    -webkit-transform: translate(6vw, 597px) rotate(-340deg);
+        -ms-transform: translate(6vw, 597px) rotate(-340deg);
+            transform: translate(6vw, 597px) rotate(-340deg);
 	}
 
 	.flying_nothing {
-    transform: translate(35vw, 555px) rotate(-384deg);
+    -webkit-transform: translate(35vw, 555px) rotate(-384deg);
+        -ms-transform: translate(35vw, 555px) rotate(-384deg);
+            transform: translate(35vw, 555px) rotate(-384deg);
 	}
 
 	.flying_nothing-2 {
 		display: block;
 		font-size: 45px;
-	  transform: translate(41vw, 202px) rotate(-345deg);
+	  -webkit-transform: translate(41vw, 202px) rotate(-345deg);
+	      -ms-transform: translate(41vw, 202px) rotate(-345deg);
+	          transform: translate(41vw, 202px) rotate(-345deg);
+	  -webkit-transition: -webkit-transform 2s;
+	  transition: -webkit-transform 2s;
+	  -o-transition: transform 2s;
 	  transition: transform 2s;
+	  transition: transform 2s, -webkit-transform 2s;
 	}
 }
 
@@ -99,25 +153,33 @@
 
 @media(max-width: 768px) {
 	.flying_div-1 {
-    transform: translate(54vw, 50px) rotate(-340deg);
+    -webkit-transform: translate(54vw, 50px) rotate(-340deg);
+        -ms-transform: translate(54vw, 50px) rotate(-340deg);
+            transform: translate(54vw, 50px) rotate(-340deg);
     font-size: 14px;
   }
 
 	.flying_hooks {
     display: block;
     font-size: 22px;
-    transform: translate(11vw, 57px) rotate(-330deg);
+    -webkit-transform: translate(11vw, 57px) rotate(-330deg);
+        -ms-transform: translate(11vw, 57px) rotate(-330deg);
+            transform: translate(11vw, 57px) rotate(-330deg);
 	}
 
   .flying_sharp {
 		font-size: 28px;
-		transform: translate(5vw, 303px) rotate(-340deg);
+		-webkit-transform: translate(5vw, 303px) rotate(-340deg);
+		    -ms-transform: translate(5vw, 303px) rotate(-340deg);
+		        transform: translate(5vw, 303px) rotate(-340deg);
 	}
 
 	.flying_nothing {
 	  display: block;
 	  font-size: 16px;
-	  transform: translate(25vw, 383px) rotate(-384deg);
+	  -webkit-transform: translate(25vw, 383px) rotate(-384deg);
+	      -ms-transform: translate(25vw, 383px) rotate(-384deg);
+	          transform: translate(25vw, 383px) rotate(-384deg);
 	}
 
 	.flying_nothing-2 {
@@ -127,25 +189,35 @@
 
 @media(max-width: 560px) {
 	.flying_nothing {
-	  transform: translate(80vw, 83px) rotate(-384deg);
+	  -webkit-transform: translate(80vw, 83px) rotate(-384deg);
+	      -ms-transform: translate(80vw, 83px) rotate(-384deg);
+	          transform: translate(80vw, 83px) rotate(-384deg);
 	}
 
 	.flying_sharp {
-    transform: translate(12vw, 186px) rotate(-340deg);
+    -webkit-transform: translate(12vw, 186px) rotate(-340deg);
+        -ms-transform: translate(12vw, 186px) rotate(-340deg);
+            transform: translate(12vw, 186px) rotate(-340deg);
 	}
 }
 
 @media(max-width: 320px) {
 	.flying_div-1 {
-    transform: translate(77vw, 129px) rotate(-340deg);
+    -webkit-transform: translate(77vw, 129px) rotate(-340deg);
+        -ms-transform: translate(77vw, 129px) rotate(-340deg);
+            transform: translate(77vw, 129px) rotate(-340deg);
 	}
 
 	.flying_hooks {
-    transform: translate(16vw, 84px) rotate(-330deg);
+    -webkit-transform: translate(16vw, 84px) rotate(-330deg);
+        -ms-transform: translate(16vw, 84px) rotate(-330deg);
+            transform: translate(16vw, 84px) rotate(-330deg);
 	}
 
 	.flying_nothing {
-    transform: translate(55vw, 66px) rotate(-384deg);
+    -webkit-transform: translate(55vw, 66px) rotate(-384deg);
+        -ms-transform: translate(55vw, 66px) rotate(-384deg);
+            transform: translate(55vw, 66px) rotate(-384deg);
 	}
 }
 
@@ -158,37 +230,69 @@
 
 .flying-2_div-2 {
   font-size: 35px;
-  transform: translate(74vw, 229px) rotate(-340deg);
+  -webkit-transform: translate(74vw, 229px) rotate(-340deg);
+      -ms-transform: translate(74vw, 229px) rotate(-340deg);
+          transform: translate(74vw, 229px) rotate(-340deg);
+  -webkit-transition: -webkit-transform 2s;
+  transition: -webkit-transform 2s;
+  -o-transition: transform 2s;
   transition: transform 2s;
+  transition: transform 2s, -webkit-transform 2s;
 }
 
 .flying-2_hooks {
   font-size: 43px;
-  transform: translate(7vw, -15px) rotate(-330deg);
+  -webkit-transform: translate(7vw, -15px) rotate(-330deg);
+      -ms-transform: translate(7vw, -15px) rotate(-330deg);
+          transform: translate(7vw, -15px) rotate(-330deg);
+  -webkit-transition: -webkit-transform 2s;
+  transition: -webkit-transform 2s;
+  -o-transition: transform 2s;
   transition: transform 2s;
+  transition: transform 2s, -webkit-transform 2s;
 }
 
 .flying-2_hooks-2 {
 	font-size: 55px;
-  transform: translate(92vw, 180px) rotate(-380deg);
+  -webkit-transform: translate(92vw, 180px) rotate(-380deg);
+      -ms-transform: translate(92vw, 180px) rotate(-380deg);
+          transform: translate(92vw, 180px) rotate(-380deg);
+  -webkit-transition: -webkit-transform 2s;
+  transition: -webkit-transform 2s;
+  -o-transition: transform 2s;
   transition: transform 2s;
+  transition: transform 2s, -webkit-transform 2s;
 }
 
 .flying-2_sharp {
 	font-size: 55px;
-  transform: translate(13vw, 178px) rotate(-340deg);
+  -webkit-transform: translate(13vw, 178px) rotate(-340deg);
+      -ms-transform: translate(13vw, 178px) rotate(-340deg);
+          transform: translate(13vw, 178px) rotate(-340deg);
+  -webkit-transition: -webkit-transform 2s;
+  transition: -webkit-transform 2s;
+  -o-transition: transform 2s;
   transition: transform 2s;
+  transition: transform 2s, -webkit-transform 2s;
 }
 
 .flying-2_nothing {
 	font-size: 38px;
-  transform: translate(86vw, 0px) rotate(-384deg);
+  -webkit-transform: translate(86vw, 0px) rotate(-384deg);
+      -ms-transform: translate(86vw, 0px) rotate(-384deg);
+          transform: translate(86vw, 0px) rotate(-384deg);
+  -webkit-transition: -webkit-transform 2s;
+  transition: -webkit-transform 2s;
+  -o-transition: transform 2s;
   transition: transform 2s;
+  transition: transform 2s, -webkit-transform 2s;
 }
 
 @media(max-width: 1600px) {
 	.flying-2_sharp {
-	  transform: translate(3vw, 178px) rotate(-340deg);
+	  -webkit-transform: translate(3vw, 178px) rotate(-340deg);
+	      -ms-transform: translate(3vw, 178px) rotate(-340deg);
+	          transform: translate(3vw, 178px) rotate(-340deg);
 	}	
 }
 
@@ -198,11 +302,15 @@
 	}
 
 	.flying-2_div-2 {
-    transform: translate(50vw, 224px) rotate(-340deg);
+    -webkit-transform: translate(50vw, 224px) rotate(-340deg);
+        -ms-transform: translate(50vw, 224px) rotate(-340deg);
+            transform: translate(50vw, 224px) rotate(-340deg);
 	}
 
 	.flying-2_hooks {
-	  transform: translate(15vw, -56px) rotate(-330deg);
+	  -webkit-transform: translate(15vw, -56px) rotate(-330deg);
+	      -ms-transform: translate(15vw, -56px) rotate(-330deg);
+	          transform: translate(15vw, -56px) rotate(-330deg);
 	}
 
 	.flying-2_hooks-2,
@@ -211,7 +319,9 @@
 	}
 
 	.flying-2_nothing {
-	  transform: translate(86vw, 211px) rotate(-384deg);
+	  -webkit-transform: translate(86vw, 211px) rotate(-384deg);
+	      -ms-transform: translate(86vw, 211px) rotate(-384deg);
+	          transform: translate(86vw, 211px) rotate(-384deg);
 	}
 }
 
@@ -222,5 +332,7 @@
 }
 
 .null-transform {
-	transform: translate(-30vw, 0) rotate(0);
+	-webkit-transform: translate(-30vw, 0) rotate(0);
+	    -ms-transform: translate(-30vw, 0) rotate(0);
+	        transform: translate(-30vw, 0) rotate(0);
 }
