@@ -87,7 +87,9 @@ $(document).ready(function(){
   	$('.get, .overlay').removeClass('show');
   	$('body, html').removeClass('stop-scrolling').css('top', 'unset').scrollTop(clientScroll);
     $('a, button, .swiper-pagination-bullet').attr('tabindex', '0');
-    $('.header__left a, .burger-close').attr('tabindex', '-1');
+    if ($('.header__left').css('transform') != 'none') {
+      $('.header__left a, .burger-close').attr('tabindex', '-1');
+    }
     $('.get input, .get button').attr('tabindex', '-1');
   });
 
@@ -98,7 +100,9 @@ $(document).ready(function(){
   	$('.get input').val('');
     $('body, html').removeClass('stop-scrolling').css('top', 'unset').scrollTop(clientScroll);
     $('a, button, .swiper-pagination-bullet').attr('tabindex', '0');
-    $('.header__left a, .burger-close').attr('tabindex', '-1');
+    if ($('.header__left').css('transform') != 'none') {
+      $('.header__left a, .burger-close').attr('tabindex', '-1');
+    }
     $('.get input, .get button').attr('tabindex', '-1');
 
     $('.we-will-call-back').css('transform', 'translateX(0)');
