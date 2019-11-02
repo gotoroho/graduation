@@ -13,12 +13,20 @@ $(document).ready(function(){
     }     
   });
 
+  if ($('.header__left').css('transform') != 'none') {
+    $('.header__left a, .burger-close').attr('tabindex', '-1');
+  }
+
   $('.burger').on('click', function() {
   	$('.header__left').addClass('show');
+    $('a, button, .swiper-pagination-bullet').attr('tabindex', '-1');
+    $('.header__left a, .burger-close').attr('tabindex', 0);
   });
 
   $('.burger-close, .header__left a').on('click', function() {
   	$('.header__left').removeClass('show');
+    $('a, button, .swiper-pagination-bullet').attr('tabindex', '0');
+    $('.header__left a, .burger-close').attr('tabindex', '-1');
   });
 
   var clientScroll;
@@ -31,6 +39,8 @@ $(document).ready(function(){
 	  	$('.get__header h2').text('Оставьте свои данные и я перезвоню!');
       clientScroll = $(window).scrollTop();
 	  	$('body, html').addClass('stop-scrolling').css('top' , -clientScroll);
+    $('a, button, .swiper-pagination-bullet').attr('tabindex', '-1');
+      $('.get input, .get button').attr('tabindex', 0);
 	  }
 	});
 
@@ -41,6 +51,8 @@ $(document).ready(function(){
   	$('.get__header h2').text('Расскажите о проекте и я свяжусь с вами!');
     clientScroll = $(window).scrollTop();
   	$('body, html').addClass('stop-scrolling').css('top' , -clientScroll);
+    $('a, button, .swiper-pagination-bullet').attr('tabindex', '-1');
+    $('.get input, .get button').attr('tabindex', 0);
   })
 
   function validateEmail(email)	{
@@ -71,9 +83,12 @@ $(document).ready(function(){
     }
   });
 
-  $('.overlay, .get__header span').on('click', function() {
+  $('.overlay, .get__header .span-container').on('click', function() {
   	$('.get, .overlay').removeClass('show');
   	$('body, html').removeClass('stop-scrolling').css('top', 'unset').scrollTop(clientScroll);
+    $('a, button, .swiper-pagination-bullet').attr('tabindex', '0');
+    $('.header__left a, .burger-close').attr('tabindex', '-1');
+    $('.get input, .get button').attr('tabindex', '-1');
   });
 
   $('.get').submit(function(e) {
@@ -82,6 +97,9 @@ $(document).ready(function(){
   	$('.get, .overlay, .invalid').removeClass('show');
   	$('.get input').val('');
     $('body, html').removeClass('stop-scrolling').css('top', 'unset').scrollTop(clientScroll);
+    $('a, button, .swiper-pagination-bullet').attr('tabindex', '0');
+    $('.header__left a, .burger-close').attr('tabindex', '-1');
+    $('.get input, .get button').attr('tabindex', '-1');
 
     $('.we-will-call-back').css('transform', 'translateX(0)');
     setTimeout(function() {
