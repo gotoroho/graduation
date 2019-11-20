@@ -1,0 +1,9 @@
+# Группа 1
+User-agent: Googlebot
+Disallow: /nogooglebot/
+
+# Группа 2
+User-agent: *
+Allow: /
+
+Sitemap: http://graduation.gotoroho.art/sitemap.xml

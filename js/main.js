@@ -13,7 +13,7 @@ $(document).ready(function(){
     }     
   });
 
-  if ($('.header__left').css('transform') != 'none') {
+  if ($(window).width() < 1100) {
     $('.header__left a, .burger-close').attr('tabindex', '-1');
   }
 
@@ -32,28 +32,36 @@ $(document).ready(function(){
   var clientScroll;
 
   $('.header__call, .footer__call').on('click', function() {
-	  if (!$('.get').hasClass('show')) {
-	  	$('.get__spec').hide();
-	  	$('.get, .overlay').addClass('show');
-	  	$('.get__submit').text('Заказать звонок');
-	  	$('.get__header h2').text('Оставьте свои данные и я перезвоню!');
-      clientScroll = $(window).scrollTop();
-	  	$('body, html').addClass('stop-scrolling').css('top' , -clientScroll);
+  	$('.get__spec').hide();
+  	$('.get__submit').text('Заказать звонок');
+  	$('.get__header h2').text('Оставьте свои данные и я перезвоню!');
+  	// $('.get, .overlay').addClass('show');
+    // clientScroll = $(window).scrollTop();
+  	// $('body, html').addClass('stop-scrolling').css('top' , -clientScroll);
     $('a, button, .swiper-pagination-bullet, .arrow').attr('tabindex', '-1');
-      $('.get input, .get button').attr('tabindex', 0);
-	  }
+    $('.get input, .get button').attr('tabindex', 0);
 	});
 
   $('.examples__order').on('click', function() {
   	$('.get__spec').show();
-  	$('.get, .overlay').addClass('show');
   	$('.get__submit').text('Заказать проект');
   	$('.get__header h2').text('Расскажите о проекте и я свяжусь с вами!');
-    clientScroll = $(window).scrollTop();
-  	$('body, html').addClass('stop-scrolling').css('top' , -clientScroll);
+  	// $('.get, .overlay').addClass('show');
+   //  clientScroll = $(window).scrollTop();
+  	// $('body, html').addClass('stop-scrolling').css('top' , -clientScroll);
     $('a, button, .swiper-pagination-bullet, .arrow').attr('tabindex', '-1');
     $('.get input, .get button').attr('tabindex', 0);
-  })
+  });
+
+  $("[data-fancybox]").fancybox({
+    afterClose: function( instance, slide ) {
+      $('a, button, .swiper-pagination-bullet, .arrow').attr('tabindex', '0');
+      $('.get input, .get button').attr('tabindex', '-1');
+      if ($(window).width() < 1100) {
+        $('.header__left a, .burger-close').attr('tabindex', '-1');
+      }
+    }
+  });
 
   function validateEmail(email)	{
     var re = /\S+@\S+\.\S+/;
@@ -61,6 +69,7 @@ $(document).ready(function(){
 	}
 
   $('.get__submit').on('click', function(e) {
+
     if (!validateEmail($('.get__email-input').val()) && $('.get__spec').css('display') != 'none') {
       e.preventDefault();
       $('.invalid_email').addClass('show');
@@ -83,35 +92,60 @@ $(document).ready(function(){
     }
   });
 
-  $('.overlay, .get__header .span-container').on('click', function() {
-  	$('.get, .overlay').removeClass('show');
-  	$('body, html').removeClass('stop-scrolling').css('top', 'unset').scrollTop(clientScroll);
-    $('a, button, .swiper-pagination-bullet, .arrow').attr('tabindex', '0');
-    if ($('.header__left').css('transform') != 'none') {
-      $('.header__left a, .burger-close').attr('tabindex', '-1');
-    }
-    $('.get input, .get button').attr('tabindex', '-1');
+  $('.get').submit(function(e) {
+    let name = $('.get input[name=name]').val(),
+        tel = $('.get input[name=tel').val(),
+        email = $('.get input[name=email]').val(),
+        type = $('.get input[name=type]').val(),
+        time = $('.get input[name=time]').val(),
+        extra = $('.get input[name=extra]').val();
+
+    $.ajax({
+      type: "POST",
+      data: {
+        'name': name,
+        'tel': tel, 
+        'email': email, 
+        'type': type,
+        'time': time, 
+        'extra': extra,
+      },
+      url: 'send.php',
+      success: showHELL,
+    });
+
+    return false;
   });
 
-  $('.get').submit(function(e) {
-  	e.preventDefault();
+  function showHELL() {
+    $('.get, .overlay, .invalid').removeClass('show');
+    $('.get input').val('');
 
-  	$('.get, .overlay, .invalid').removeClass('show');
-  	$('.get input').val('');
-    $('body, html').removeClass('stop-scrolling').css('top', 'unset').scrollTop(clientScroll);
     $('a, button, .swiper-pagination-bullet, .arrow').attr('tabindex', '0');
-    if ($('.header__left').css('transform') != 'none') {
+    $('.get input, .get button').attr('tabindex', '-1');
+    if ($(window).width() < 1100) {
       $('.header__left a, .burger-close').attr('tabindex', '-1');
     }
-    $('.get input, .get button').attr('tabindex', '-1');
 
     $('.we-will-call-back').css('transform', 'translateX(0)');
     setTimeout(function() {
       $('.we-will-call-back').css('transform', 'translateX(100vw)');
     }, 6666);
-  });
+  }
 
   $('.we-will-call-back').on('click', function() {
     $('.we-will-call-back').css('transform', 'translateX(100vw)');
-  })
+  });
+
+  // scrolling
+  $('[href^="#"]').on('click', function(e) {
+    let id = $(this).attr('href');
+    id = id.slice(1, id.length);
+    if (id == '') return;
+    let offsetTop = $(`[id = ${id}`).offset().top;
+    e.preventDefault();
+    $('html, body').animate({
+      'scrollTop': offsetTop
+    }, 800);
+  });
 });
